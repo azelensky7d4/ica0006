@@ -6,6 +6,9 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 2. Serveritele paigaldada horisontaalselt skaleeruv tarkvara (CEPH, ScaleIO, Microsoft Storagespaces, MinIO, Lustre, LizardFS jms).
 3. Installeerida terraformi kasutades virtuaalserver ülikooli laborisse.
 4. Provisioneerida andmesalvestus pind virtuaalserverile üle IP võrgu (kas plokina, jagatud failisüsteemina või objektide salvestuskohana). Et muuta ülesanne realistlikumaks, panna seda pinda kasutama kas andmebaas või mingi veebirakendus. Veenduda süsteemi tõrkekindluses, lülitades välja suvaline füüsiline server.
+![skeem](images/skeem.png)
+
+
 
 ## Ülesannete jaotamine
 | Ülesanne                                                                             | Vastutav isik       |
