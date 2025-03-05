@@ -10,7 +10,7 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 ## Ülesannete jaotamine
 | Ülesanne                                                                             | Vastutav isik       |
 |--------------------------------------------------------------------------------------|---------------------|
-| [1. RAID seadistamine](#1-raid-installeerimine)                                      | Alexander Zelenskiy |
+| [1. RAID seadistamine](#1-raid-seadistamine)                                         | Alexander Zelenskiy |
 | [2. OS paigaldamine](#2-os-paigaldamine)                                             |                     |
 | [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)                     |                     |
 | [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
