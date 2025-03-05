@@ -8,15 +8,15 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 4. Provisioneerida andmesalvestus pind virtuaalserverile üle IP võrgu (kas plokina, jagatud failisüsteemina või objektide salvestuskohana). Et muuta ülesanne realistlikumaks, panna seda pinda kasutama kas andmebaas või mingi veebirakendus. Veenduda süsteemi tõrkekindluses, lülitades välja suvaline füüsiline server.
 
 ## Ülesannete jaotamine
-| Ülesanne                                                                           | Vastutav isik       |
-|------------------------------------------------------------------------------------|---------------------|
-| [1. RAID seadistamine](#raid-installeerimine)                                      | Alexander Zelenskiy |
-| [2. OS paigaldamine](#os-paigaldamine)                                             |                     |
-| [3. Andmesalvestuspinna loomine](#andmesalvestuspinna-loomine)                     |                     |
-| [4. Virtuaalserveri installeerimine](#virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
-| [5. Andmesalvestuspinna provisioneerimine](#andmesalvestuspinna-provisioneerimine) |                     |
-| [6. Andmebaasi seadistamine](#andmebaasi-seadistamine)                             |                     |
-| [7. Tõrgetestimine](#tõrgetestimine)                                               |                     |
+| Ülesanne                                                                             | Vastutav isik       |
+|--------------------------------------------------------------------------------------|---------------------|
+| [1. RAID seadistamine](#1-raid-installeerimine)                                      | Alexander Zelenskiy |
+| [2. OS paigaldamine](#2-os-paigaldamine)                                             |                     |
+| [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)                     |                     |
+| [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
+| [5. Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine) |                     |
+| [6. Andmebaasi seadistamine](#6-andmebaasi-seadistamine)                             |                     |
+| [7. Tõrgetestimine](#7-tõrgetestimine)                                               |                     |
 
 ## **Ressursid**
 | ILO liidese IP-d | Serverite IP-d  | Virtuaalserver |
@@ -27,13 +27,13 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 
 ## Sisukord
 
-1. [RAID seadistamine](#raid-seadistamine)
-2. [OS paigaldamine](#os-paigaldamine)
-3. [Andmesalvestuspinna loomine](#andmesalvestuspinna-loomine)
-4. [Virtuaalserveri installeerimine](#virtuaalserveri-installeerimine)
-5. [Andmesalvestuspinna provisioneerimine](#andmesalvestuspinna-provisioneerimine)
-6. [Andmebaasi seadistamine](#andmebaasi-seadistamine)
-7. [Tõrgetestimine](#tõrgetestimine)
+1. [RAID seadistamine](#1-raid-seadistamine)
+2. [OS paigaldamine](#2-os-paigaldamine)
+3. [Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)
+4. [Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)
+5. [Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine)
+6. [Andmebaasi seadistamine](#6-andmebaasi-seadistamine)
+7. [Tõrgetestimine](#7-tõrgetestimine)
 
 # **1. RAID seadistamine**
 
