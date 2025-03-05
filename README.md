@@ -49,7 +49,7 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 # **3. Andmesalvestuspinna loomine**
 
 # **4. Virtuaalserveri installeerimine**
-Terraform
+Terraformm
 # **5. Andmesalvestuspinna provisioneerimine**
 
 # **6. Andmebaasi seadistamine**
