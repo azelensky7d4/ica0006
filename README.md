@@ -31,6 +31,9 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 | 192.168.185.7    | 192.168.185.27  | 192.168.180.26  |
 | 192.168.185.8    | 192.168.185.28  |                 |
 | 192.168.185.9    | 192.168.185.29  |                 |
+
+
+<br>
 VM user: student
 <br>
 VM password: student1234
