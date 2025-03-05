@@ -27,12 +27,12 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 
 ## Sisukord
 
-1. [RAID seadistamine](#RAID seadistamine)
-2. [OS paigaldamine](#OS paigaldamine)
-3. [Andmesalvestuspinna loomine](#Andmesalvestuspinna loomine)
-4. [Virtuaalserveri installeerimine](#Virtuaalserveri installeerimine)
-5. [Andmesalvestuspinna provisioneerimine](#Andmesalvestuspinna provisioneerimine)
-6. [6. Andmebaasi seadistamine](#Andmebaasi seadistamine)
+1. [RAID seadistamine](#RAID-seadistamine)
+2. [OS paigaldamine](#OS-paigaldamine)
+3. [Andmesalvestuspinna loomine](#Andmesalvestuspinna-loomine)
+4. [Virtuaalserveri installeerimine](#Virtuaalserveri-installeerimine)
+5. [Andmesalvestuspinna provisioneerimine](#Andmesalvestuspinna-provisioneerimine)
+6. [Andmebaasi seadistamine](#Andmebaasi-seadistamine)
 7. [Tõrgetestimine](#Tõrgetestimine)
 
 # **1. RAID seadistamine**
