@@ -143,34 +143,7 @@ server on üles SSH abil:
 $ ssh student@192.168.180.26
 student@192.168.180.26`s password: # student1234
 Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-78-generic x86_64)
-
- * Documentation:  https://help.ubuntu.com
- * Management:     https://landscape.canonical.com
- * Support:        https://ubuntu.com/advantage
-
-  System information as of Wed Mar  5 05:17:00 PM UTC 2025
-
-  System load:  0.00537109375      Processes:               214
-  Usage of /:   29.0% of 23.45GB   Users logged in:         0
-  Memory usage: 7%                 IPv4 address for ens160: 192.168.180.26
-  Swap usage:   0%
-
-
-Expanded Security Maintenance for Applications is not enabled.
-
-0 updates can be applied immediately.
-
-Enable ESM Apps to receive additional future security updates.
-See https://ubuntu.com/esm or run: sudo pro status
-
-
-The list of available updates is more than a week old.
-To check for new updates run: sudo apt update
-New release '24.04.2 LTS' available.
-Run 'do-release-upgrade' to upgrade to it.
-
-
-Last login: Wed Mar  5 17:14:42 2025 from 172.20.12.33
+# <output omitted>
 student@lab:~$
 ```
 Kui ligipääs serverile on olemas, võib astuda järgmise sammu juurde.
