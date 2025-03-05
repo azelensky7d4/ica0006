@@ -19,7 +19,7 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 |--------------------------------------------------------------------------------------|---------------------|
 | [1. RAID seadistamine](#1-raid-seadistamine)                                         | Alexander Zelenskiy |
 | [2. OS paigaldamine](#2-os-paigaldamine)                                             |                     |
-| [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)                     |                     |
+| [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)                     | Kristjan Steinfeldt |
 | [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
 | [5. Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine) |                     |
 | [6. Andmebaasi seadistamine](#6-andmebaasi-seadistamine)                             |                     |
