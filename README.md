@@ -142,9 +142,10 @@ server on üles SSH abil:
 ```zsh
 $ ssh student@192.168.180.26
 student@192.168.180.26`s password: # student1234
+# Output
 Welcome to Ubuntu 22.04.3 LTS (GNU/Linux 5.15.0-78-generic x86_64)
 # <output omitted>
-student@lab:~$
+$ student@lab:~$
 ```
 Kui ligipääs serverile on olemas, võib astuda järgmise sammu juurde.
 
