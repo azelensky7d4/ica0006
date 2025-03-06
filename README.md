@@ -50,6 +50,22 @@ VM password: student1234
 
 # **1. RAID seadistamine**
 
+Et jõuda RAID konfigureerimise liideseni, tuleb alglaadimise ajal vajutada `F8`.
+Eduka sooritamise korral tekib menüü, millest on vaja kohe väljuda:
+![raid 1 samm](images/raid1.png)
+
+Pärast akna sulgemist toimub RAID kontrolleri laadimisprotsess, ning avaneb menüü, kus valin `Create Logical Drive`:
+![raid 2 samm](images/raid2.png)
+
+Loogilise ketta loomise aknas valin füüsilisi kettaid, mida soovin RAID massiivi panna ning valin sobiva RAID taseme.
+Kuna ülesande järgi on vaja saavutada maksimaalse kõrkäideldavuse, valin `RAID 1+0`:
+![raid 3 samm](images/raid3.png)
+
+Nüüd on loogiline ketas loodud. Kontrollin seda peamenüü `View Logical Drive` sektsiooni alt:
+![raid 4 samm](images/raid4.png)
+
+Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal.
+
 # **2. OS paigaldamine**
 
 # **3. Andmesalvestuspinna loomine**
