@@ -65,7 +65,7 @@ Nüüd on loogiline ketas loodud. Kontrollin seda peamenüü `View Logical Drive
 ![raid 4 samm](images/raid4.png)
 
 Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal. Protsessi lõpus igale masinale saab seadistatud
-üks ketas ~600 GB mahuga.
+üks ketas ~300 GB mahuga.
 
 # **2. OS paigaldamine**
 
