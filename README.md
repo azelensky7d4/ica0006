@@ -71,13 +71,20 @@ Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal. P
 
 Serveritele installisime operatsioonisüsteemiks Ubuntu server 24.04. Installides sai konfigureeritud serverid vastavatele staatilistele IP'dele. Ubuntu installi eraldi ei dokumenteeri.
 Kõikidele serveritele sai loodud kasutaja:
+
 user: student
+
 passwd: student1234
+
 Serveri nimed vastavalt järjekorrale: server1, server2, server3
 
 IP aadress: 192.168.185.2x
+
 Subnet: 255.255.252.0
+
 Gateway: 192.168.187.254
+
+DNS: 172.16.0.175
 
 # **3. Andmesalvestuspinna loomine**
 
