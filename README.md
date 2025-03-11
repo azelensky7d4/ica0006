@@ -86,7 +86,11 @@ Gateway: 192.168.187.254
 
 DNS: 172.16.0.175
 
-Serveril on SSH lubatud ja on ligipääsetav kõigile.
+Serveritele installisime ka OpenSSH kasutades käsku:
+```zsh
+sudo apt install openssh-server
+```
+SSH'ga pääsevad serverile ligi kõik kes on ülikooli võrgus.
 
 # **3. Andmesalvestuspinna loomine**
 
