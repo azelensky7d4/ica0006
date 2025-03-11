@@ -86,7 +86,7 @@ Gateway: 192.168.187.254
 
 DNS: 172.16.0.175
 
-Serveril on SSH lubatud on ligipääsetav kõigile.
+Serveril on SSH lubatud ja on ligipääsetav kõigile.
 
 # **3. Andmesalvestuspinna loomine**
 
