@@ -6,7 +6,6 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 2. Serveritele paigaldada horisontaalselt skaleeruv tarkvara (CEPH, ScaleIO, Microsoft Storagespaces, MinIO, Lustre, LizardFS jms).
 3. Installeerida terraformi kasutades virtuaalserver ülikooli laborisse.
 4. Provisioneerida andmesalvestus pind virtuaalserverile üle IP võrgu (kas plokina, jagatud failisüsteemina või objektide salvestuskohana). Et muuta ülesanne realistlikumaks, panna seda pinda kasutama kas andmebaas või mingi veebirakendus. Veenduda süsteemi tõrkekindluses, lülitades välja suvaline füüsiline server.
-<br>
 
 Ülesande lahendamiseks kasutame skeemil näidatud ülesehitust:
 
@@ -26,16 +25,15 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 | [7. Tõrgetestimine](#7-tõrgetestimine)                                               |                     |
 
 ## **Ressursid**
-| ILO liidese IP-d | Serverite IP-d  | Virtuaalserver  |
-|------------------|-----------------|-----------------|
-| 192.168.185.7    | 192.168.185.27  | 192.168.180.26  |
-| 192.168.185.8    | 192.168.185.28  |                 |
-| 192.168.185.9    | 192.168.185.29  |                 |
+| Nimi           | ILO liidese IP | Serveri IP     |
+|----------------|:--------------:|----------------|
+| server1        | 192.168.185.7  | 192.168.185.27 |
+| server2        | 192.168.185.8  | 192.168.185.28 |
+| server3        | 192.168.185.9  | 192.168.185.29 |
+| Virtuaalserver |       –        | 192.168.180.26 |
 
-
-<br>
 VM user: student
-<br>
+
 VM password: student1234
 
 ## Sisukord
@@ -57,40 +55,41 @@ Eduka sooritamise korral tekib menüü, millest on vaja kohe väljuda:
 Pärast akna sulgemist toimub RAID kontrolleri laadimisprotsess, ning avaneb menüü, kus valin `Create Logical Drive`:
 ![raid 2 samm](images/raid2.png)
 
-Loogilise ketta loomise aknas valin füüsilisi kettaid, mida soovin RAID massiivi panna ning valin sobiva RAID taseme.
-Kuna ülesande järgi on vaja saavutada maksimaalse kõrkäideldavuse, valin `RAID 1+0`:
+Loogilise ketta loomise aknas valin füüsilised kettad, mida soovin RAID massiivi panna ning valin sobiva RAID taseme.
+Kuna ülesande järgi on vaja saavutada maksimaalne kõrgkäideldavus, valin `RAID 1+0`:
 ![raid 3 samm](images/raid3.png)
 
 Nüüd on loogiline ketas loodud. Kontrollin seda peamenüü `View Logical Drive` sektsiooni alt:
 ![raid 4 samm](images/raid4.png)
 
-Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal. Protsessi lõpus igale masinale saab seadistatud
-üks ketas ~300 GB mahuga.
+Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal. Protsessi lõpuks on igale masinale
+seadistatud üks ~300 GB mahuga ketas.
 
 # **2. OS paigaldamine**
 
-Serveritele installisime operatsioonisüsteemiks Ubuntu server 24.04. Installides sai konfigureeritud serverid vastavatele staatilistele IP'dele. Ubuntu installi eraldi ei dokumenteeri.
-Kõikidele serveritele sai loodud kasutaja:
+Serveritele installisime operatsioonisüsteemiks Ubuntu server 24.04. Installides sai konfigureeritud serverid vastavatele staatilistele IP'dele.
+Ubuntu installi eraldi ei dokumenteeri.
+
+**Kõikidele serveritele sai loodud kasutaja:**
 
 user: student
 
 passwd: student1234
 
-Serveri nimed vastavalt järjekorrale: server1, server2, server3
+**Serverite nimed vastavalt järjekorrale**: server1, server2, server3
 
-IP aadress: 192.168.185.2x
-
-Subnet: 255.255.252.0
-
-Gateway: 192.168.187.254
-
-DNS: 172.16.0.175
+| Väli       |     Väärtus     |
+|------------|:---------------:|
+| IP aadress | 192.168.185.2x  |
+| Subnet     |  255.255.252.0  |
+| Gateway    | 192.168.187.254 |
+| DNS        |  172.16.0.175   |
 
 Serveritele installisime ka OpenSSH kasutades käsku:
 ```zsh
 sudo apt install openssh-server
 ```
-SSH'ga pääsevad serverile ligi kõik kes on ülikooli võrgus.
+SSH'ga pääsevad serverile ligi kõik, kes on ülikooli võrgus.
 
 # **3. Andmesalvestuspinna loomine**
 
