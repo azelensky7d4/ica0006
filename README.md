@@ -93,6 +93,73 @@ SSH'ga pääsevad serverile ligi kõik, kes on ülikooli võrgus.
 
 # **3. Andmesalvestuspinna loomine**
 
+1.Andmesalvestuspinna jaoks installime cephi eelvajadused igale serverile.
+
+Esimese sammuna veendume et kettad on täiesti tühjad
+```zsh
+$ sudo sgdisk --zap-all /dev/sdb
+$ sudo wipefs --all /dev/sdb
+```
+Ceph vajab kas dockerit või podmani, otsustasime dockeri installida.
+```zsh
+$ curl -fsSL https://get.docker.com -o get-docker.sh
+$ sudo sh get-docker.sh
+```
+
+Pärast dockeri installimist kontrollime et lvm2 on installitud ja et kõik meie serverid on ntp serveriga sünkroonis
+```zsh
+$ sudo apt install lvm2
+$ timedatectl status
+```
+
+2. CEPHADM
+valime ühe serveri mis on meie cephi haldaja. Meie jaoks on see server1
+
+server 1 root kasutajana teeme ssh võtmed ja saadame selle teistele serveritele
+```zsh
+$ su -
+$ ssh-keygen
+$ ssh-copy-id root@192.168.185.28
+$ ssh-copy-id root@192.168.185.29
+```
+
+Tõmbame alla cephadm ja lisame uusima versiooni globaalse muutuja
+```zsh
+$ export CEPH_RELEASE=19.2.1
+$ curl --silent --remote-name --location https://download.ceph.com/rpm-${CEPH_RELEASE}/el9/noarch/cephadm
+$ chmod +x cephadm
+$ ./cephadm add-repo --release squid
+$ ./cephadm install
+```
+
+Lisame server1 cephadm haldajaks ja tõmbame alla ceph käsurea utiili
+```zsh
+$ cephadm bootstrap --mon-ip 192.168.185.27
+$ cephadm install ceph-common
+```
+
+Eelmise sammu käigus lõi ceph uued ssh võtmed. lisame need teistesse serveritesse
+```zsh
+$ ssh-copy-id -f -i /etc/ceph/ceph.pub root@192.168.185.28
+$ ssh-copy-id -f -i /etc/ceph/ceph.pub root@192.168.185.29
+```
+
+Lisame serverid 2 ja 3 ceph clusterisse
+```zsh
+$ ceph orch host add server2 192.168.185.28 --labels _admin
+$ ceph orch host add server3 192.168.185.29 --labels _admin
+```
+
+Lisame kõik saadavalolevad kettad cephi haldamisele
+```zsh
+$ ceph orch apply osd --all-available-devices
+```
+
+Loome andmesalvestus volüümi
+```zsh
+$ ceph fs volume create cephfs
+```
+
 # **4. Virtuaalserveri installeerimine**
 
 Et kasutada loodud andmesalvestuspinda, loon uue virtuaalmasina ülikooli laborisse, selleks kasutan Hashicorp Terraformi.
