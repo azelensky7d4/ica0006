@@ -378,4 +378,6 @@ server {
 ```
 ning: `service nginx restart`
 
+Rakendus on kättesaadav ülikooli võrgus olles aadressilt http://192.168.180.26/.
+
 # **7. Tõrgetestimine**
