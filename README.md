@@ -20,7 +20,7 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 | [2. OS paigaldamine](#2-os-paigaldamine)                                             | Tõnis Lepp          |
 | [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)                     | Kristjan Steinfeldt |
 | [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
-| [5. Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine) |                     |
+| [5. Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine) | Otto K. P.          |
 | [6. Andmebaasi seadistamine](#6-andmebaasi-seadistamine)                             | Otto K. P.          |
 | [7. Tõrgetestimine](#7-tõrgetestimine)                                               |                     |
 
@@ -87,7 +87,7 @@ passwd: student1234
 
 Serveritele installisime ka OpenSSH kasutades käsku:
 ```zsh
-sudo apt install openssh-server
+$ sudo apt install openssh-server
 ```
 SSH'ga pääsevad serverile ligi kõik, kes on ülikooli võrgus.
 
@@ -262,6 +262,68 @@ Kui ligipääs serverile on olemas, võib astuda järgmise sammu juurde.
 
 # **5. Andmesalvestuspinna provisioneerimine**
 
+Esmalt tuleb paigaldada vajalikud paketid:
+```zsh
+$ sudo apt install ceph ceph-common
+```
+Seejärel tuleb kopeerida konfiguratsioonifail ja võti server1-lt:
+```zsh
+$ scp root@192.168.185.27:/etc/ceph/ceph.conf /etc/ceph/ceph.conf
+$ scp root@192.168.185.27:/etc/ceph/ceph.client.admin.keyring /etc/ceph/ceph.client.admin.keyring
+```
+ning viimaks mount'ida:
+```zsh
+$ sudo mount -t ceph 192.168.185.27:/ /mnt/cephfs -o name=admin,secret=<key> # <key> failist /etc/ceph/ceph.client.admin.keyring
+$ echo "192.168.185.27:/ /mnt/cephfs ceph name=admin,secret=<key> 0 0" | sudo tee -a /etc/fstab # automaatne mount'imine taaskäivitamisel, <key> failist /etc/ceph/ceph.client.admin.keyring
+```
+
 # **6. Andmebaasi seadistamine**
+
+Tuleb paigaldada MySQL server, luua `/mnt/cephfs/mysql` kataloog ning anda vajalikud õigused:
+```zsh
+$ sudo apt install mysql-server
+$ sudo mkdir /mnt/cephfs/mysql
+$ sudo chown mysql:mysql /mnt/cephfs/mysql
+```
+
+Siis muuta MySQL konfiguratsioonifaili, et MySQL kasutaks andmete jaoks `/mnt/cephfs/mysql`:
+```zsh
+$ sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+```
+Muuta tuleb seda rida: `datadir = /mnt/cephfs/mysql`
+
+Lisaks peab lisama faili `/etc/apparmor.d/usr.sbin.mysqld` read:
+```zsh
+/mnt/cephfs/mysql/ r,
+/mnt/cephfs/mysql/** rwk,
+```
+kasutades selleks näiteks vim'i: `sudo vim /etc/apparmor.d/usr.sbin.mysqld`.
+See tagab, et AppArmor ei blokeeri selles kaustas tegutsemist.
+
+Seejärel tuleb profiil uuesti laadida:
+```zsh
+$ sudo apparmor_parser -r /etc/apparmor.d/usr.sbin.mysqld
+```
+
+ning siis MySQL lähtestada ja restartida:
+```zsh
+$ sudo mysqld --initialize
+$ sudo service mysql restart
+```
+
+Et sisse saada, tuleb vahetada ka root'i parool:
+```zsh
+$ sudo service mysqld stop
+$ sudo mkdir -p /var/run/mysqld
+$ sudo chown mysql:mysql /var/run/mysqld
+$ sudo mysqld --skip-grant-tables &
+$ sudo mysql -u root
+> FLUSH PRIVILEGES;
+> ALTER USER 'root'@'localhost' IDENTIFIED BY 'student1234';
+> exit;
+$ sudo killall -9 mysqld
+$ sudo systemctl start mysql
+$ sudo mysql -u root -p # pw: student1234
+```
 
 # **7. Tõrgetestimine**
