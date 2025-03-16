@@ -62,8 +62,8 @@ Kuna ülesande järgi on vaja saavutada maksimaalne kõrgkäideldavus, valin `RA
 Nüüd on loogiline ketas loodud. Kontrollin seda peamenüü `View Logical Drive` sektsiooni alt:
 ![raid 4 samm](images/raid4.png)
 
-Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal. Protsessi lõpuks on igale masinale
-seadistatud üks ~300 GB mahuga ketas.
+Kordan seda protsessi kõikide meie grupile antud füüsiliste serverite peal. Protsessi lõpus igale masinale saab seadistatud
+üks ketas ~300 GB mahuga, kuhu paigaldatakse OS, ning üks 1.8 TB mahuga, mida antakse CEPHile.
 
 # **2. OS paigaldamine**
 
