@@ -22,7 +22,7 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 | [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
 | [5. Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine) | Otto K. P.          |
 | [6. Andmebaasi seadistamine](#6-andmebaasi-seadistamine)                             | Otto K. P.          |
-| [7. Tõrgetestimine](#7-tõrgetestimine)                                               |                     |
+| [7. Tõrkekindluse testimine](#7-tõrkekindluse-testimine)                             |                     |
 
 ## **Ressursid**
 | Nimi           | ILO liidese IP | Serveri IP     |
@@ -44,7 +44,7 @@ VM password: student1234
 4. [Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)
 5. [Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine)
 6. [Andmebaasi seadistamine](#6-andmebaasi-seadistamine)
-7. [Tõrgetestimine](#7-tõrgetestimine)
+7. [Tõrkekindluse testimine](#7-tõrkekindluse-testimine)
 
 # **1. RAID seadistamine**
 
@@ -380,4 +380,4 @@ ning: `service nginx restart`
 
 Rakendus on kättesaadav ülikooli võrgus olles aadressilt http://192.168.180.26/.
 
-# **7. Tõrgetestimine**
+# **7. Tõrkekindluse testimine**
