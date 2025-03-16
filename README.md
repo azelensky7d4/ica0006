@@ -326,4 +326,56 @@ $ sudo systemctl start mysql
 $ sudo mysql -u root -p # pw: student1234
 ```
 
+**Et panna andmebaasi kasutama AGAMA rakendust _(inspireeritult IT infra ainest)_, tuleb installida vajalikud paketid:**
+```zsh
+sudo apt install nginx uwsgi uwsgi-plugin-python3 python3-flask-sqlalchemy python3-pymysql
+```
+
+Seejärel luua agama kasutaja, andmebaas, andmebaasikasutaja ning anda sellele vajalikud õigused:
+```zsh
+$ sudo adduser --system --no-create-home --group agama
+$ sudo mysql -u root -p # pw: student1234 
+> CREATE DATABASE agama;
+> CREATE USER 'agama'@'localhost' IDENTIFIED BY 'student1234';
+> GRANT ALL PRIVILEGES ON agama.* TO 'agama'@'localhost';
+> FLUSH PRIVILEGES;
+> exit;
+```
+
+Laadida alla ka rakenduse fail:
+```zsh
+sudo wget -O /opt/agama/agama.py https://raw.githubusercontent.com/hudolejev/agama/master/agama.py
+```
+
+Luua `/etc/uwsgi/apps-enabled/agama.ini`:
+```zsh
+[uwsgi]
+chdir = /opt/agama
+module = agama:app
+env = AGAMA_DATABASE_URI=mysql+pymysql://env = AGAMA_DATABASE_URI=mysql+pymysql://agama:student1234@localhost/agama
+plugins = python3
+socket = 127.0.0.1:5000
+uid = agama
+```
+ning anda vajalikud õigused
+```zsh
+sudo chown agama:agama /etc/uwsgi/apps-enabled/agama.ini
+sudo chmod 0600 /etc/uwsgi/apps-enabled/agama.ini
+```
+ja taaskäivitada uwsgi `service uwsgi restart`
+
+Nginx'i `/etc/nginx/sites-enabled/default`:
+```zsh
+server {
+        listen 80 default_server;
+        server_name _;
+
+        location / {
+                uwsgi_pass localhost:5000;
+                include uwsgi_params;
+        }
+}
+```
+ning `service nginx restart`
+
 # **7. Tõrgetestimine**
