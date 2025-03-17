@@ -22,7 +22,7 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 | [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)             | Alexander Zelenskiy |
 | [5. Andmesalvestuspinna provisioneerimine](#5-andmesalvestuspinna-provisioneerimine) | Otto K. P.          |
 | [6. Andmebaasi seadistamine](#6-andmebaasi-seadistamine)                             | Otto K. P.          |
-| [7. Tõrkekindluse testimine](#7-tõrkekindluse-testimine)                             |                     |
+| [7. Tõrkekindluse testimine](#7-tõrkekindluse-testimine)                             | Tõnis Lepp          |
 
 ## **Ressursid**
 | Nimi           | ILO liidese IP | Serveri IP     |
