@@ -381,3 +381,12 @@ ning: `service nginx restart`
 Rakendus on kättesaadav ülikooli võrgus olles aadressilt http://192.168.180.26/.
 
 # **7. Tõrkekindluse testimine**
+
+Tõrkekindluse testimiseks simuleerime suvalise serveri riket sellega, et lülitame ta ootamatult välja. 
+Server 2 näitel on CEPH dashboardist näha, et kuigi tegu on tähelepanu vajava veaga, siis tööd ta veel ei katkesta. 
+![Alerts](https://github.com/user-attachments/assets/2ecaebe4-968c-4437-a656-28cc3d9007e6)
+
+Kahte serverit korraga ei saa välja enam lülitada, sest quorum vajab kahte serverit, et otsuseid langetada.
+
+Testid tegin läbi iga serveriga üks haaval, kõigi puhul tulemus sama.
+
