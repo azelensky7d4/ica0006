@@ -14,15 +14,15 @@ Autorid (Grupp 11) - Alexander Zelenskiy, Otto Kaur Pappel, Kristjan Steinfeldt,
 
 
 ## Ülesannete jaotamine
-| Ülesanne                                                                 | Vastutav isik       |
-|--------------------------------------------------------------------------|---------------------|
-| [1. RAID seadistamine](#1-raid-seadistamine)                             | Alexander Zelenskiy |
-| [2. OS paigaldamine](#2-os-paigaldamine)                                 | Tõnis Lepp          |
-| [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)         | Kristjan Steinfeldt |
-| [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine) | Alexander Zelenskiy |
-| [5. Andmesalvestuspinna mount'imine](#5-andmesalvestuspinna-mountimine)  | Otto K. P.          |
-| [6. Andmebaasi seadistamine](#6-andmebaasi-seadistamine)                 | Otto K. P.          |
-| [7. Tõrkekindluse testimine](#7-tõrkekindluse-testimine)                 | Tõnis Lepp          |
+| Ülesanne                                                                                                       | Vastutav isik       |
+|----------------------------------------------------------------------------------------------------------------|---------------------|
+| [1. RAID seadistamine](#1-raid-seadistamine)                                                                   | Alexander Zelenskiy |
+| [2. OS paigaldamine](#2-os-paigaldamine)                                                                       | Tõnis Lepp          |
+| [3. Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)                                               | Kristjan Steinfeldt |
+| [4. Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)                                       | Alexander Zelenskiy |
+| [5. Andmesalvestuspinna mount'imine](#5-andmesalvestuspinna-mountimine)                                        | Otto K. P.          |
+| [6. Andmebaasi ja seda kasutava rakenduse seadistamine](#6-andmebaasi-ja-seda-kasutava-rakenduse-seadistamine) | Otto K. P.          |
+| [7. Tõrkekindluse testimine](#7-tõrkekindluse-testimine)                                                       | Tõnis Lepp          |
 
 ## **Ressursid**
 | Nimi           | ILO liidese IP | Serveri IP     |
@@ -43,7 +43,7 @@ VM password: student1234
 3. [Andmesalvestuspinna loomine](#3-andmesalvestuspinna-loomine)
 4. [Virtuaalserveri installeerimine](#4-virtuaalserveri-installeerimine)
 5. [Andmesalvestuspinna mount'imine](#5-andmesalvestuspinna-mountimine)
-6. [Andmebaasi seadistamine](#6-andmebaasi-seadistamine)
+6. [Andmebaasi ja seda kasutava rakenduse seadistamine](#6-andmebaasi-ja-seda-kasutava-rakenduse-seadistamine)
 7. [Tõrkekindluse testimine](#7-tõrkekindluse-testimine)
 
 # **1. RAID seadistamine**
@@ -277,7 +277,7 @@ $ sudo mount -t ceph 192.168.185.27,192.168.185.28,192.168.185.29:/ /mnt/cephfs 
 $ echo "192.168.185.27,192.168.185.28,192.168.185.29:/ /mnt/cephfs ceph name=admin,secret=<key> 0 0" | sudo tee -a /etc/fstab # automaatne mount'imine taaskäivitamisel, <key> failist /etc/ceph/ceph.client.admin.keyring
 ```
 
-# **6. Andmebaasi seadistamine**
+# **6. Andmebaasi ja seda kasutava rakenduse seadistamine**
 
 Tuleb paigaldada MySQL server, luua `/mnt/cephfs/mysql` kataloog ning anda vajalikud õigused:
 ```zsh
