@@ -313,16 +313,16 @@ $ sudo service mysql restart
 
 Et sisse saada, tuleb vahetada ka root'i parool:
 ```zsh
-$ sudo service mysqld stop
+$ sudo service mysql stop
 $ sudo mkdir -p /var/run/mysqld
 $ sudo chown mysql:mysql /var/run/mysqld
 $ sudo mysqld --skip-grant-tables &
 $ sudo mysql -u root
 > FLUSH PRIVILEGES;
 > ALTER USER 'root'@'localhost' IDENTIFIED BY 'student1234';
+> SHUTDOWN;
 > exit;
-$ sudo killall -9 mysqld
-$ sudo systemctl start mysql
+$ sudo service mysql start
 $ sudo mysql -u root -p # pw: student1234
 ```
 
